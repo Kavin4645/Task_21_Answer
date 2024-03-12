@@ -13,11 +13,11 @@ public class Ans_3 {
 
 		driver.navigate().to("http://the-internet.herokuapp.com/nested_frames");
 		driver.switchTo().frame("frame-top");
-		List<WebElement> li = driver.findElements(By.tagName("frame"));
+		List<WebElement> li = driver.findElements(By.xpath("/html[contains(.,'TOP')]"));
 		int size = li.size();
 		System.out.println(size);
 		driver.switchTo().frame("frame-left");
-		WebElement txt1 = driver.findElement(By.tagName("body"));
+		WebElement txt1 = driver.findElement(By.xpath("/html[contains(.,'LEFT')]"));
 		String text = txt1.getText();
 		System.out.println(text);
 		driver.switchTo().defaultContent();
@@ -34,7 +34,7 @@ public class Ans_3 {
 		System.out.println(text2);
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("frame-bottom");
-		WebElement txt4 = driver.findElement(By.tagName("body"));
+		WebElement txt4 = driver.findElement(By.xpath("/html[contains(.,'BOTTOM')]"));
 		String text3 = txt4.getText();
 		System.out.println(text3);
 		driver.switchTo().defaultContent();
